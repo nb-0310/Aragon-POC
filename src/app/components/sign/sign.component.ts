@@ -9,6 +9,7 @@ import { SignService } from '../../services/sign.service';
   styles: [],
 })
 export class SignComponent {
+  context: any;
   constructor (public signService: SignService) { }
 
   logSigner () {
@@ -18,5 +19,6 @@ export class SignComponent {
   async logContext () {
     const ctx = await this.signService.getContext()
     console.log(ctx)
+    this.context = ctx
   }
 }

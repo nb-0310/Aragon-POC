@@ -7,11 +7,12 @@ import { GetProposalService } from '../../services/get-proposal.service';
   styleUrl: './get-proposal.component.css'
 })
 export class GetProposalComponent {
+  proposals: any;
 
   constructor (public getProposalService: GetProposalService) { }
 
   async getProposals () {
     const p = await this.getProposalService.getProposals()
-    console.log(p)
+    this.proposals = p
   }
 }

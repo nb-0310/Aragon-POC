@@ -1,1 +1,7 @@
 <button (click)="getProposals()">Get Proposals</button>
+
+<div *ngIf="proposals">
+    <ul *ngFor="let item of proposals">
+        <li><app-proposal proposal="item"></app-proposal></li>
+    </ul>
+</div>
