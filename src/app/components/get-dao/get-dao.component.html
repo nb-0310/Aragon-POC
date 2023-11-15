@@ -1,0 +1,11 @@
+<button (click)="getDetails()">Get Details</button>
+
+<div *ngIf="dao">
+  <ul>
+    <li><strong>Name: </strong>{{dao.metadata.name}}</li>
+    <li><strong>Addr: </strong>{{dao.address}}</li>
+    <li><strong>Description: </strong>{{dao.metadata.description}}</li>
+    <li><strong>Plugin Name: </strong>{{dao.plugins[0].id}}</li>
+    <li><strong>Plugin Address: </strong>{{dao.plugins[0].instanceAddress}}</li>
+  </ul>
+</div>
