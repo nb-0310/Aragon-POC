@@ -2,6 +2,6 @@
 
 <div *ngIf="proposals">
     <ul *ngFor="let item of proposals">
-        <li><app-proposal proposal="item"></app-proposal></li>
+        <li><app-proposal [item]="item"></app-proposal></li>
     </ul>
 </div>

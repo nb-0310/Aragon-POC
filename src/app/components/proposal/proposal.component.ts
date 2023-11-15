@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { GetProposalService } from '../../services/get-proposal.service';
 
 @Component({
   selector: 'app-proposal',
@@ -6,7 +7,17 @@ import { Component, Input } from '@angular/core';
   styleUrl: './proposal.component.css'
 })
 export class ProposalComponent {
-  @Input() proposal: any;
+  @Input() item: any;
 
-  
+  constructor (public getProposalService: GetProposalService) { }
+
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    console.log(this.item)
+  }
+
+  changeProposalId (id: string) {
+    this.getProposalService.setProposalId(id)
+  } 
 }

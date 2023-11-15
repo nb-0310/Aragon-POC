@@ -6,6 +6,7 @@ import { SignService } from './sign.service';
   providedIn: 'root'
 })
 export class GetProposalService {
+  proposalId: string | undefined;
   proposals: any;
 
   constructor(public signService: SignService) { }
@@ -23,5 +24,13 @@ export class GetProposalService {
   async getProposals () {
     await this.gettingProposals()
     return this.proposals 
+  }
+
+  setProposalId (id: string): void {
+    this.proposalId = id
+  }
+
+  getProposalId (): any {
+    return this.proposalId
   }
 }

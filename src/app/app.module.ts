@@ -8,6 +8,7 @@ import { CreateDaoComponent } from './components/create-dao/create-dao.component
 import { GetDaoComponent } from './components/get-dao/get-dao.component';
 import { GetProposalComponent } from './components/get-proposal/get-proposal.component';
 import { ProposalComponent } from './components/proposal/proposal.component';
+import { ProposalDetailsComponent } from './components/proposal-details/proposal-details.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ProposalComponent } from './components/proposal/proposal.component';
     CreateDaoComponent,
     GetDaoComponent,
     GetProposalComponent,
-    ProposalComponent
+    ProposalComponent,
+    ProposalDetailsComponent
   ],
   imports: [
     BrowserModule,
