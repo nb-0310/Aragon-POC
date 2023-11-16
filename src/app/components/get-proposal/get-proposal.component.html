@@ -1,7 +1,9 @@
 <button (click)="getProposals()">Get Proposals</button>
 
 <div *ngIf="proposals">
-    <ul *ngFor="let item of proposals">
-        <li><app-proposal [item]="item"></app-proposal></li>
-    </ul>
+  <button routerLink="create-proposal">Create a Proposal</button>
+
+  <ul *ngFor="let item of proposals">
+    <li><app-proposal [item]="item"></app-proposal></li>
+  </ul>
 </div>

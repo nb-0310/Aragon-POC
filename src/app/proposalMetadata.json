@@ -1,0 +1,15 @@
+{
+  "title": "Should we conduct a party if Team India wins world cup?",
+  "summary": "If Team India wins the World Cup, should we throw a grand dinner party to all our employees?",
+  "description": "This proposal is for testing purposes only :)",
+  "resources": [
+    {
+      "name": "Website",
+      "url": "https://website..."
+    }
+  ],
+  "media": {
+    "logo": "https://free-nf-ts.vercel.app/avatar.png",
+    "header": "https://..."
+  }
+}

@@ -1,1 +1,63 @@
-<p>create-proposal works!</p>
+<div>
+  <form id="proposalForm" (submit)="submitProposal($event)">
+    <label for="title">Title:</label>
+    <input
+      type="text"
+      id="title"
+      name="title"
+      value="Should we conduct a party if Team India wins world cup?"
+      required
+    /><br />
+
+    <label for="summary">Summary:</label>
+    <textarea id="summary" name="summary" required>
+If Team India wins the World Cup, should we throw a grand dinner party to all our employees?</textarea
+    ><br />
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" required>
+This proposal is for testing purposes only :)</textarea
+    ><br />
+
+    <label for="resourceName">Resource Name:</label>
+    <input
+      type="text"
+      id="resourceName"
+      name="resourceName"
+      value="Website"
+      required
+    /><br />
+
+    <label for="resourceUrl">Resource URL:</label>
+    <input
+      type="url"
+      id="resourceUrl"
+      name="resourceUrl"
+      value="https://website..."
+      required
+    /><br />
+
+    <label for="logo">Logo URL:</label>
+    <input
+      type="url"
+      id="logo"
+      name="logo"
+      value="https://free-nf-ts.vercel.app/avatar.png"
+      required
+    /><br />
+
+    <label for="header">Header URL:</label>
+    <input
+      type="url"
+      id="header"
+      name="header"
+      value="https://..."
+      required
+    /><br />
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <button (click)="navigateToGetProposal()">Go To get proposals</button>
+  <div *ngIf="proposalId">Proposal is created with ID: {{ proposalId }}</div>
+</div>

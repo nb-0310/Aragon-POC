@@ -1,10 +1,22 @@
 <div *ngIf="proposalDetails">
-  <p><strong>ID: </strong>{{proposalDetails.id}}</p>
-  <p><strong>DAO Addr: </strong>{{proposalDetails.dao.address}}</p>
-  <p><strong>startDate: </strong>{{proposalDetails.startDate}}</p>
-  <p><strong>endDate: </strong>{{proposalDetails.endDate}}</p>
-  <p><strong>creationDate: </strong>{{proposalDetails.creationDate}}</p>
-  <p><strong>Yes: </strong>{{proposalDetails.result.yes}}</p>
-  <p><strong>No: </strong>{{proposalDetails.result.no}}</p>
-  <p><strong>Abstain: </strong>{{proposalDetails.result.abstain}}</p>
+  <p><strong>ID: </strong>{{ proposalDetails.id }}</p>
+  <p><strong>DAO Addr: </strong>{{ proposalDetails.dao.address }}</p>
+  <p><strong>startDate: </strong>{{ proposalDetails.startDate }}</p>
+  <p><strong>endDate: </strong>{{ proposalDetails.endDate }}</p>
+  <p><strong>creationDate: </strong>{{ proposalDetails.creationDate }}</p>
+  <p><strong>Yes: </strong>{{ proposalDetails.result.yes }}</p>
+  <p><strong>No: </strong>{{ proposalDetails.result.no }}</p>
+  <p><strong>Abstain: </strong>{{ proposalDetails.result.abstain }}</p>
+
+  <button (click)="voteClicked = true">Vote</button>
+
+  <div *ngIf="voteClicked">
+    <select name="" id="" (change)="changeVote($event)">
+      <option value="yes">yes</option>
+      <option value="no">no</option>
+      <option value="abstain">abstain</option>
+    </select>
+
+    <button (click)="submitVote()">Submit Vote</button>
+  </div>
 </div>

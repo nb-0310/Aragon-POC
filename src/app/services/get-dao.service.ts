@@ -16,7 +16,7 @@ export class GetDaoService {
 
     // Address or ENS of the DAO whose metadata you want to retrieve.
     const daoAddressOrEns: string =
-      'poc-dao-0310-3.dao.eth'; // test.dao.eth
+      '0x44d2d815246b4fd6f5a52b1db2d9df71973adf74'; // test.dao.eth
 
     // Get a DAO's details.
     const dao: DaoDetails | null = await client.methods.getDao(daoAddressOrEns);

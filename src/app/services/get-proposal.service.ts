@@ -1,36 +1,43 @@
 import { Injectable } from '@angular/core';
-import { Context, TokenVotingClient } from "@aragon/sdk-client";
+import { Context, TokenVotingClient, ProposalSortBy } from '@aragon/sdk-client';
 import { SignService } from './sign.service';
+import { ProposalStatus, SortDirection } from "@aragon/sdk-client-common";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class GetProposalService {
   proposalId: string | undefined;
   proposals: any;
 
-  constructor(public signService: SignService) { }
+  constructor(public signService: SignService) {}
 
-  async gettingProposals () {
-    const tokenVotingClient = new TokenVotingClient(this.signService.getContext());
+  async gettingProposals() {
+    const tokenVotingClient = new TokenVotingClient(
+      this.signService.getContext()
+    );
 
     const getProposals = await tokenVotingClient.methods.getProposals({
-      daoAddressOrEns: '0x44d2d815246b4fd6f5a52b1db2d9df71973adf74',
+      daoAddressOrEns: '0x44d2d815246b4fd6f5a52b1db2d9df71973adf74'
     });
 
-    this.proposals = getProposals
+    // {
+    //   daoAddressOrEns: '0xdd0c8e1c1d6209788ba3c9f7ca5fa9e92e70f876',
+    // }
+
+    this.proposals = getProposals;
   }
 
-  async getProposals () {
-    await this.gettingProposals()
-    return this.proposals 
+  async getProposals() {
+    await this.gettingProposals();
+    return this.proposals;
   }
 
-  setProposalId (id: string): void {
-    this.proposalId = id
+  setProposalId(id: string): void {
+    this.proposalId = id;
   }
 
-  getProposalId (): any {
-    return this.proposalId
+  getProposalId(): any {
+    return this.proposalId;
   }
 }
