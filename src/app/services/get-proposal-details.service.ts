@@ -7,6 +7,9 @@ import { TokenVotingClient, TokenVotingProposal } from '@aragon/sdk-client';
   providedIn: 'root',
 })
 export class GetProposalDetailsService {
+
+  propoasalDetails:any;
+
   constructor(
     public signService: SignService,
     public getProposalService: GetProposalService
@@ -21,7 +24,8 @@ export class GetProposalDetailsService {
       await tokenVotingClient.methods.getProposal(
         this.getProposalService.getProposalId()
       );
-
+      console.log('Check',tokenVotingProposal)
+      this.propoasalDetails = tokenVotingProposal;
       return tokenVotingProposal
   }
 }

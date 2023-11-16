@@ -1,4 +1,10 @@
 <div *ngIf="proposalDetails">
-        <p><strong>ID: </strong></p>
-        <p><strong>DAO Addr: </strong></p>
+  <p><strong>ID: </strong>{{proposalDetails.id}}</p>
+  <p><strong>DAO Addr: </strong>{{proposalDetails.dao.address}}</p>
+  <p><strong>startDate: </strong>{{proposalDetails.startDate}}</p>
+  <p><strong>endDate: </strong>{{proposalDetails.endDate}}</p>
+  <p><strong>creationDate: </strong>{{proposalDetails.creationDate}}</p>
+  <p><strong>Yes: </strong>{{proposalDetails.result.yes}}</p>
+  <p><strong>No: </strong>{{proposalDetails.result.no}}</p>
+  <p><strong>Abstain: </strong>{{proposalDetails.result.abstain}}</p>
 </div>

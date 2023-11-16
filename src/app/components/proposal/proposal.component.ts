@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { GetProposalService } from '../../services/get-proposal.service';
+import {GetProposalDetailsService} from "../../services/get-proposal-details.service"
 
 @Component({
   selector: 'app-proposal',
@@ -9,7 +10,7 @@ import { GetProposalService } from '../../services/get-proposal.service';
 export class ProposalComponent {
   @Input() item: any;
 
-  constructor (public getProposalService: GetProposalService) { }
+  constructor (public getProposalService: GetProposalService, public getProposalDetailService:GetProposalDetailsService) { }
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.

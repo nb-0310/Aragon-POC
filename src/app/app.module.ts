@@ -9,6 +9,8 @@ import { GetDaoComponent } from './components/get-dao/get-dao.component';
 import { GetProposalComponent } from './components/get-proposal/get-proposal.component';
 import { ProposalComponent } from './components/proposal/proposal.component';
 import { ProposalDetailsComponent } from './components/proposal-details/proposal-details.component';
+import { VoteComponent } from './components/vote/vote.component';
+import { CreateProposalComponent } from './components/create-proposal/create-proposal.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ProposalDetailsComponent } from './components/proposal-details/proposal
     GetDaoComponent,
     GetProposalComponent,
     ProposalComponent,
-    ProposalDetailsComponent
+    ProposalDetailsComponent,
+    VoteComponent,
+    CreateProposalComponent
   ],
   imports: [
     BrowserModule,
