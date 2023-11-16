@@ -12,13 +12,14 @@ export class CreateProposalComponent {
 
   constructor(
     public createProposalService: CreateProposalService,
-    private router: Router
+    private router: Router,
   ) {}
 
   async submitProposal(event: Event) {
     event.preventDefault()
     try {
       this.proposalId = await this.createProposalService.createProposal();
+
     } catch (error) {
       console.error(error);
     }

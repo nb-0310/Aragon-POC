@@ -1,1 +1,45 @@
-<p>create-dao works!</p>
+<div>
+  <form id="daoForm" (submit)="createDao($event)">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" value="POC DAO" required /><br />
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" required>
+This is a sample DAO used for testing and demonstration purposes only</textarea
+    ><br />
+
+    <label for="avatar">Avatar URL:</label>
+    <input
+      type="url"
+      id="avatar"
+      name="avatar"
+      value=""
+      placeholder="Optional"
+    /><br />
+
+    <label for="linkName">Link Name:</label>
+    <input
+      type="text"
+      id="linkName"
+      name="linkName"
+      value="Website"
+      required
+    /><br />
+
+    <label for="linkUrl">Link URL:</label>
+    <input
+      type="url"
+      id="linkUrl"
+      name="linkUrl"
+      value="https://..."
+      required
+    /><br />
+
+    <button type="submit">Create DAO</button>
+  </form>
+
+  <div *ngIf="dao">
+    <p><strong>DAO Address: </strong>{{ dao.daoAddress }}</p>
+    <p><strong>Plugin Address: </strong>{{ dao.pliginAddresses[0] }}</p>
+  </div>
+</div>

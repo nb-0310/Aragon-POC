@@ -12,25 +12,26 @@ export class GetProposalService {
 
   constructor(public signService: SignService) {}
 
-  async gettingProposals() {
+  async gettingProposals(addr: string) {
     const tokenVotingClient = new TokenVotingClient(
       this.signService.getContext()
     );
 
     const getProposals = await tokenVotingClient.methods.getProposals({
-      daoAddressOrEns: '0x44d2d815246b4fd6f5a52b1db2d9df71973adf74'
+      daoAddressOrEns: addr
     });
 
     // {
     //   daoAddressOrEns: '0xdd0c8e1c1d6209788ba3c9f7ca5fa9e92e70f876',
     // }
 
-    this.proposals = getProposals;
+    return getProposals
   }
 
-  async getProposals() {
-    await this.gettingProposals();
-    return this.proposals;
+  async getProposals(addr: string) {
+    const p = await this.gettingProposals(addr);
+    this.proposals = p;
+    return p
   }
 
   setProposalId(id: string): void {
