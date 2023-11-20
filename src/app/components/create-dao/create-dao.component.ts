@@ -11,10 +11,10 @@ export class CreateDaoComponent {
   dao: any;
   constructor(public createDaoService: CreateDaoService, public getDaoService: GetDaoService) {}
 
-  createDao(event: Event) {
+  async createDao(event: Event) {
     event.preventDefault();
     try {
-      const d = this.createDaoService.createDao();
+      const d = await this.createDaoService.createDao();
       this.dao = d;
     } catch (error) {
       console.error(error);
