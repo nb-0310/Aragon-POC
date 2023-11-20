@@ -59,7 +59,7 @@ export class CreateDaoService {
 
     const createParams: CreateDaoParams = {
       metadataUri,
-      ensSubdomain: 'my-org', // my-org.dao.eth
+      ensSubdomain: 'my-dao-0310-01', // my-org.dao.eth
       plugins: [tokenVotingPluginInstallItem], // optional, this will determine the plugins installed in your DAO upon creation. 1 is mandatory, more than that is optional based on the DAO's needs.
     };
 
