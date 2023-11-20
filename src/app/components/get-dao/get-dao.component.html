@@ -11,9 +11,13 @@
     <li><strong>Plugin Address: </strong>{{dao.plugins[0].instanceAddress}}</li>
   </ul>
 
-  <!-- <div *ngIf="members">
+  <div *ngIf="members">
+    <br>
+    <h3>Members:-</h3>
     <ul *ngFor="let member of members">
-      <li></li>
+      <li><strong>Addr: </strong>{{member.address}}</li>
+      <li><strong>Voting Power: </strong>{{member.votingPower}}</li>
+      <li><strong>Balance: </strong>{{member.balance}}</li>
     </ul>
-  </div> -->
+  </div>
 </div>

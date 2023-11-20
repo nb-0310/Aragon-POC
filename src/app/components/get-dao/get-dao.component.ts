@@ -9,7 +9,7 @@ import { GetDaoService } from '../../services/get-dao.service';
 export class GetDaoComponent {
   daoName: any ='poc-dao-0310-3.dao.eth';
   dao: any;
-  // members: Array<any> = []
+  members: Array<any> = []
   
   constructor (public getDaoService: GetDaoService) { }
 
@@ -24,11 +24,11 @@ export class GetDaoComponent {
   
       this.dao = dao;
       
-      // const members = await this.getDaoService.getMembers(this.daoName);
+      const members = await this.getDaoService.getMembers(this.daoName);
       
-      // if (members) {
-      //   this.members = members;
-      // }
+      if (members) {
+        this.members = members;
+      }
     } catch (error) {
       console.error('Error fetching DAO details or members:', error);
     }

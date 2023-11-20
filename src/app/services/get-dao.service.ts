@@ -32,11 +32,14 @@ export class GetDaoService {
       this.signService.getContext()
     );
 
-    console.log(tokenVotingClient)
+    // console.log(tokenVotingClient)
 
+    // console.log(TokenVotingMember)
     try {
       const members: TokenVotingMember[] =
-        await tokenVotingClient.methods.getMembers(pluginAddress);
+        await tokenVotingClient.methods.getMembers({
+          pluginAddress: pluginAddress
+        });
       return members;
     } catch (error) {
       console.error('Error fetching members:', error);
